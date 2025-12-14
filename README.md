@@ -34,3 +34,47 @@ Returned logs → GPT Threat Analysis Engine
 Structured Findings: Title, MITRE Mapping, Confidence, IOCs, Recommendations
        ↓
 Color-coded display + Saved to _threats.jsonl
+```
+
+## Key Features
+
+- Natural language threat hunting ("Check for brute force on windows-target-1")
+- Intelligent table/field selection using OpenAI function calling
+- Real-time querying of Defender for Endpoint and SigninLogs
+- Automated MITRE ATT&CK technique mapping
+- Confidence scoring and actionable recommendations
+- Secure design: API keys never committed
+
+## Project Rebuild Journey (My Learning Path)
+
+I rebuilt this system in phases to ensure each component worked perfectly before moving on:
+
+| Phase | Goal                  | Key Learnings                                                                 |
+|-------|-----------------------|-------------------------------------------------------------------------------|
+| 1     | Setup & Auth          | Azure DefaultAzureCredential, secure key management                           |
+| 2     | Query Planning        | OpenAI function calling, structured outputs                                   |
+| 3     | Log Retrieval         | KQL construction, pandas for data handling                                    |
+| 4     | Threat Analysis       | Prompt engineering, JSON schema enforcement                                   |
+| 5     | Output & Logging      | Colorama formatting, JSONL append mode                                        |
+| 6     | Guardrails & Polish   | Validation, model selection, error handling, token estimation, rate limit awareness |
+
+## Demo Example
+
+**User asks:**  
+> "Any suspicious logon attempts against administrator accounts in the last 48 hours?"
+
+**Bot responds with:**
+- Detected brute-force attempts from multiple external IPs
+- Mapped to MITRE T1110.001 (Password Guessing)
+- High confidence findings
+- IOCs extracted (IP addresses, usernames)
+- Recommendations: block IPs, review lockout policies
+
+## Setup Instructions (For Reviewers/Evaluators)
+
+> **Note**: This project requires access to an Azure Log Analytics workspace with Microsoft Defender and Azure AD logs, plus an OpenAI API key.
+
+1. Clone the repo
+   ```bash
+   git clone https://github.com/yourusername/ai-threat-hunter-rebuild.git
+   cd ai-threat-hunter-rebuild
