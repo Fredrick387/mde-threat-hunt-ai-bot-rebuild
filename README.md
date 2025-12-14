@@ -74,7 +74,43 @@ I rebuilt this system in phases to ensure each component worked perfectly before
 
 > **Note**: This project requires access to an Azure Log Analytics workspace with Microsoft Defender and Azure AD logs, plus an OpenAI API key.
 
-1. Clone the repo
-   ```bash
-   git clone https://github.com/yourusername/ai-threat-hunter-rebuild.git
-   cd ai-threat-hunter-rebuild
+### 1. Project folder and GitHub repo created
+- Repository URL: <FILL IN YOUR REPO URL>
+- Local folder: <FILL IN PATH>
+
+### 2. Git initialized and first commit pushed
+- `.gitignore` created with venv/, _keys.py, etc.
+- Initial commit message: <FILL IN>
+
+### 3. Virtual environment created and activated
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+
+### #. Title Here
+- Description: Info
+- Description: Info
+
+### 2. Git initialized and first commit pushed
+- Description: Info
+- Description: Info
+
+### 3. Virtual environment created and activated
+- Description: Info
+- Description: Info
+
+
+
+## Future Improvements (Planned)
+
+- [ ] Streamlit web interface
+- [ ] Support for more MDE tables (Process, Network, File events)
+- [ ] Automated incident creation via Microsoft Graph
+- [ ] Chunking for large log sets
+- [ ] Unit tests and CI/CD pipeline
+
+## Acknowledgments
+
+Built during my cybersecurity internship. Special thanks to my team for providing access to real logs and a production-grade starting system — this rebuild was my way of going deeper.
+
+**Rebuilt from scratch to learn, not just to use.**
